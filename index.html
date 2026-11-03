@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>管家智脑 · 大模型物业知识库赋能人才培养</title>
+<meta name="description" content="龙湖智创生活 · 住宅赛道 9 号 · 礼嘉事业部：管家专属知识库 + 大模型 RAG，支撑新人培训、岗位问答、岗位考核三大场景。">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+
+<!-- ============ 侧边栏 ============ -->
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="brand-logo">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M6 22c0-6 5-10 11-10 3 0 5 1 7 2" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M26 10c0 6-5 10-11 10-3 0-5-1-7-2" fill="none" stroke="#7FB0FF" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="16" cy="16" r="2.2" fill="#7FB0FF"/>
+      </svg>
+    </div>
+    <div class="brand-text">
+      <strong>管家智脑</strong>
+      <span>LONGFOR · KNOWLEDGE AI</span>
+    </div>
+  </div>
+
+  <div class="nav-group">工作台</div>
+  <nav class="nav" id="nav">
+    <a class="nav-item" href="#dashboard" data-page="dashboard">
+      <i class="ico">▦</i><span>综合总览</span>
+    </a>
+    <a class="nav-item" href="#knowledge" data-page="knowledge">
+      <i class="ico">▤</i><span>知识库档案</span>
+    </a>
+    <a class="nav-item" href="#qa" data-page="qa">
+      <i class="ico">◍</i><span>岗位问答</span>
+    </a>
+    <a class="nav-item" href="#training" data-page="training">
+      <i class="ico">◲</i><span>新人培训</span>
+    </a>
+    <a class="nav-item" href="#exam" data-page="exam">
+      <i class="ico">☰</i><span>岗位考核</span>
+    </a>
+    <a class="nav-item" href="#review" data-page="review">
+      <i class="ico">◇</i><span>待复核中心</span><em class="badge" id="badgeReview">0</em>
+    </a>
+    <a class="nav-item" href="#ledger" data-page="ledger">
+      <i class="ico">≡</i><span>问答台账</span>
+    </a>
+    <a class="nav-item" href="#alerts" data-page="alerts">
+      <i class="ico">◉</i><span>风险预警中心</span><em class="badge danger" id="badgeAlerts">0</em>
+    </a>
+  </nav>
+
+  <div class="side-note">
+    <strong>演示环境 · AI 模拟</strong>
+    <p>数据仅保存在当前浏览器，不会上传至服务器。答案由本地知识库匹配生成。</p>
+    <button class="side-reset" data-act="reset-db">重置演示数据</button>
+  </div>
+</aside>
+
+<!-- ============ 主区 ============ -->
+<div class="main">
+  <header class="topbar">
+    <button class="icon-btn menu-btn" id="btnMenu" title="打开菜单">☰</button>
+    <div class="wordmark">
+      <span class="wm-cn">龙湖智创生活</span>
+      <span class="wm-en">LONGFOR PROPERTY</span>
+    </div>
+    <div class="topbar-right">
+      <span class="clock" id="clock">--</span>
+      <button class="icon-btn" id="btnRefresh" title="刷新数据">↻</button>
+      <div class="avatar" title="当前账号">李</div>
+    </div>
+  </header>
+
+  <main id="view" class="view"></main>
+</div>
+
+<div class="modal-root" id="modalRoot"></div>
+<div class="toast-root" id="toastRoot"></div>
+
+<script src="assets/js/db.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
